@@ -1,0 +1,123 @@
+server:
+  port: 8090
+safar:
+  modern_standard_arabic:
+    application:
+      named_entity_recegnition: /modern-standard-arabic/basic/ner/tag
+    basic:
+      syntax:
+        parser: /modern-standard-arabic/basic/syntax/parser/parse
+        posTagger: /modern-standard-arabic/basic/syntax/postagger/postag
+      morphology:
+        analyzer: /modern-standard-arabic/basic/morphology/analyzer/analyze
+        lemmatizer: /modern-standard-arabic/basic/morphology/lemmatizer/lemmatize
+        stemmer: /modern-standard-arabic/basic/morphology/stemmer/stem
+        generator:
+      semantics:
+    util:
+      normalization:
+        remove_diacritics: /modern-standard-arabic/utils/remover/remove-diacritics
+        normalize: /modern-standard-arabic/utils/normalizer/normalize
+      benchmark:
+        analyzer: /modern-standard-arabic/utils/benchmark/analyzer
+        stemmer:
+          root_based: /modern-standard-arabic/utils/benchmark/stemmer/root-based
+          stem_based: /modern-standard-arabic/utils/benchmark/stemmer/stem-based
+        parser:
+      pattern_detection: /modern-standard-arabic/utils/pattern-detection/detect
+      splitting: /modern-standard-arabic/utils/splitter/split
+      stop_words:
+        get_all: /modern-standard-arabic/utils/stopwords
+        remove: /modern-standard-arabic/utils/stopwords/remove
+        by_text: /modern-standard-arabic/utils/stopwords/by-text
+        is_stop_word: /modern-standard-arabic/utils/stopwords/is-stopword
+        analyze: /modern-standard-arabic/utils/stopwords/analyze
+      tokenization: /modern-standard-arabic/utils/tokenizer/tokenize
+      tranliteration: /modern-standard-arabic/utils/transliteration/transliterate
+    resources:
+      lexicon:
+        arabic_alphabet:
+          letters:
+            get_All: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/letters
+            by_desc: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/letters/by-desc
+            by_arabic_desc: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/letters/by-arabic-desc
+            by_english_desc: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/letters/by-english-desc
+            by_display: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/letters/by-display
+            by_position_display: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/letters/by-position-display
+            letter: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/letter
+            by_isolated_display: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/letters/by-isolated-display
+            by_code: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/letters/by-code
+            by_unicode: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/letters/by-unicode
+            by_translit: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/letters/by-translit
+            by_buckwalter: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/letters/by-buck_walter
+            by_wiki: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/letters/by-wiki
+          vowels:
+            get_All: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/vowels
+            by_desc: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/vowels/by-desc
+            by_arabic_desc: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/vowels/by-english-desc
+            by_english_desc: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/vowels/by-arabic-desc
+            by_display: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/vowels/by-display
+            by_code: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/vowels/by-code
+            by_unicode: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/vowels/by-unicode
+            by_buckwalter: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/vowels/by-buckwalter
+            by_wiki: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/vowels/by-wiki
+            by_translit: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/vowels/by-translit
+          punctuation:
+            get_All: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/punctuations
+            by_desc: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/punctuations/by-desc
+            by_arabic_desc: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/punctuations/by-arabic-desc
+            by_english_desc: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/punctuations/by-english-desc
+            by_display: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/punctuations/by-display
+            by_code: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/punctuations/by-code
+            by_unicode: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/punctuations/by-unicode
+            display_by_unicode: /modern-standard-arabic/basic/resources/lexicon/arabic-alphabet/punctuations/display-by-unicode
+        arabic_clitics:
+          clitics:
+            get_all: /modern-standard-arabic/basic/resources/lexicon/clitics
+            by_word:  /modern-standard-arabic/basic/resources/lexicon/clitics/by-word
+          proclitics:
+            get_all: /modern-standard-arabic/basic/resources/lexicon/clitics/proclitics
+            by_word: /modern-standard-arabic/basic/resources/lexicon/clitics/proclitics/by-word
+          enclitics:
+            get_all: /modern-standard-arabic/basic/resources/lexicon/clitics/enclitics
+            by_word: /modern-standard-arabic/basic/resources/lexicon/clitics/enclitics/by-word
+        arabic_particles:
+          get_all: /modern-standard-arabic/basic/resources/lexicon/particles
+          vowled_particles: /modern-standard-arabic/basic/resources/lexicon/particles/vowled-particles/by-unvowled-form
+          simple_particles:
+            get_all: /modern-standard-arabic/basic/resources/lexicon/particles/simple-particles
+            by_word: /modern-standard-arabic/basic/resources/lexicon/particles/simple-particles/by-word
+            by_unvowled_form: /modern-standard-arabic/basic/resources/lexicon/particles/simple-particles/by-unvowled-form
+          special_verbs:
+            get_all: /modern-standard-arabic/basic/resources/lexicon/particles/special-verbs
+            by_unvowled_form: /modern-standard-arabic/basic/resources/lexicon/particles/special-verbs/by-unvowled-form
+        calem: /modern-standard-arabic/basic/resources/lexicon/calem
+        dictionnary:
+          alwasit:
+            get_all: /modern-standard-arabic/basic/resources/dictionnary/alwassit
+            by_text: /modern-standard-arabic/basic/resources/dictionnary/alwassit/by-text
+          moassir:
+            get_all: /modern-standard-arabic/basic/resources/dictionnary/moassir
+            by_text: /modern-standard-arabic/basic/resources/dictionnary/moassir/by-text
+      corpora:
+  machine_learning:
+    levenshtein: /modern-standard-arabic/machine-learning/levenshtein
+    HMM:
+  moroccan_arabic:
+    resources:
+      lexicon:
+        maded:
+          get_all: /morrocan-arabic/lexicon/maded
+          by_pos: /morrocan-arabic/lexicon/maded/by-pos
+          by_root: /morrocan-arabic/lexicon/maded/by-root
+          by_lemme: /morrocan-arabic/lexicon/maded/all/by-lemma
+        moralex:
+          get_all: /morrocan-arabic/lexicon/moralex
+          by_morpheme: /morrocan-arabic/lexicon/moralex/by-morpheme
+          by_pos: /morrocan-arabic/lexicon/moralex/by-pos
+      corpora:
+        lid_corpus:
+          get_all: /morrocan-arabic/corpora/lid-corpus
+          by_text: /morrocan-arabic/corpora/lid-corpus/by-text
+          by_lang: /morrocan-arabic/corpora/lid-corpus/by-lang
+  classical_arabic:
