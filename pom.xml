@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>sfar-rest-api</artifactId>
+    <artifactId>safar-trail-rest-api</artifactId>
     <version>1.0-SNAPSHOT</version>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -23,7 +23,7 @@
         <repository>
             <id>safar-repo-id</id>
             <name>safar-repo</name>
-            <url>http://arabic.emi.ac.ma/maven</url>
+            <url>http://arabic.emi.ac.ma/trial</url>
         </repository>
     </repositories>
 
@@ -42,7 +42,14 @@
             <scope>test</scope>
         </dependency>
 
+
         <dependency>
+            <groupId>org.safar</groupId>
+            <artifactId>safar-trail</artifactId>
+            <version>3.0-SNAPSHOT</version>
+        </dependency>
+
+       <!-- <dependency>
             <groupId>org.safar</groupId>
             <artifactId>safar-util</artifactId>
             <version>3.0-SNAPSHOT</version>
@@ -76,7 +83,7 @@
             <groupId>org.safar</groupId>
             <artifactId>safar-named-entity-recognition</artifactId>
             <version>3.0-SNAPSHOT</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <build>

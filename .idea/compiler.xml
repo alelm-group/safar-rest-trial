@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="safar-rest-api" />
         <module name="sfar-rest-api" />
+        <module name="safar-trial-rest-api" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="safar-rest-api" options="-parameters" />
+      <module name="safar-trial-rest-api" options="-parameters" />
       <module name="sfar-rest-api" options="-parameters" />
     </option>
   </component>

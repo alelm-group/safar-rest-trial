@@ -1,13 +1,13 @@
 package rest_api.safar.machine_learning;
 
-import edu.stanford.nlp.util.ArrayUtils;
-import org.springframework.context.annotation.Bean;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.apache.commons.lang3.ArrayUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 import safar.machine_learning.levenshtein.factory.LevenshteinFactory;
 import safar.machine_learning.levenshtein.interfaces.ILevenshtein;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
@@ -18,8 +18,13 @@ import java.util.Map;
 public class MLRestController {
 
     public static String[] implementations = {"APACHE", "SAFAR"};
-    private static ILevenshtein safarLev;
-    private static ILevenshtein apacheLev;
+    private final ILevenshtein safarLev;
+    private final ILevenshtein apacheLev;
+
+    public MLRestController() {
+        apacheLev = LevenshteinFactory.getApacheImplementation();
+        safarLev = LevenshteinFactory.getSAFARImplementation();
+    }
 
     @PostMapping("${safar.machine_learning.levenshtein}")
     public Map<String, Float> getLevenshtein(@RequestBody LevRequestBody req,
@@ -49,17 +54,5 @@ public class MLRestController {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST);
         }
         return map;
-    }
-
-    @Bean
-    public static ILevenshtein getSafarLev() {
-        safarLev = LevenshteinFactory.getSAFARImplementation();
-        return safarLev;
-    }
-
-    @Bean
-    public static ILevenshtein getApacheLev() {
-        apacheLev = LevenshteinFactory.getApacheImplementation();
-        return apacheLev;
     }
 }

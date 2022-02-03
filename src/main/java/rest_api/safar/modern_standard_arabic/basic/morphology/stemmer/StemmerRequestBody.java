@@ -3,6 +3,7 @@ package rest_api.safar.modern_standard_arabic.basic.morphology.stemmer;
 public class StemmerRequestBody {
     private String text;
     private String implementation;
+
     public String getText() {
         return text;
     }

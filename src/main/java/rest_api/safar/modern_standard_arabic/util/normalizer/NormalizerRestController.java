@@ -1,7 +1,9 @@
 package rest_api.safar.modern_standard_arabic.util.normalizer;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 import safar.modern_standard_arabic.util.normalization.factory.NormalizerFactory;
 import safar.modern_standard_arabic.util.normalization.interfaces.INormalizer;
 
@@ -14,7 +16,12 @@ import java.util.Map;
 @RestController
 @CrossOrigin
 public class NormalizerRestController {
-    private static INormalizer normalizer;
+    private final INormalizer normalizer;
+
+    public NormalizerRestController() {
+        normalizer = NormalizerFactory.getSAFARNormalizerImplementation();
+    }
+
 
     @PostMapping("${safar.modern_standard_arabic.util.normalization.normalize}")
     public Map<String, String> normalize(@RequestBody NormalizerRequestBody req,
@@ -42,10 +49,5 @@ public class NormalizerRestController {
 
     }
 
-    @Bean
-    public INormalizer getNormalizer() {
-        normalizer = NormalizerFactory.getSAFARNormalizerImplementation();
-        return normalizer;
-    }
 
 }

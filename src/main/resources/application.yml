@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  port: 8080
 safar:
   modern_standard_arabic:
     application:
@@ -16,7 +16,7 @@ safar:
       semantics:
     util:
       normalization:
-        remove_diacritics: /modern-standard-arabic/utils/remover/remove-diacritics
+        remove_diacritics: /modern-standard-arabic/utils/remove_diacritics
         normalize: /modern-standard-arabic/utils/normalizer/normalize
       benchmark:
         analyzer: /modern-standard-arabic/utils/benchmark/analyzer
@@ -82,23 +82,23 @@ safar:
             get_all: /modern-standard-arabic/basic/resources/lexicon/clitics/enclitics
             by_word: /modern-standard-arabic/basic/resources/lexicon/clitics/enclitics/by-word
         arabic_particles:
-          get_all: /modern-standard-arabic/basic/resources/lexicon/particles
-          vowled_particles: /modern-standard-arabic/basic/resources/lexicon/particles/vowled-particles/by-unvowled-form
+          get_all: /modern-standard-arabic/basic/resources/lexicon/arabic-particles
+          vowled_particles: /modern-standard-arabic/basic/resources/lexicon/arabic-particles/vowled-particles/by-unvowled-form
           simple_particles:
-            get_all: /modern-standard-arabic/basic/resources/lexicon/particles/simple-particles
-            by_word: /modern-standard-arabic/basic/resources/lexicon/particles/simple-particles/by-word
-            by_unvowled_form: /modern-standard-arabic/basic/resources/lexicon/particles/simple-particles/by-unvowled-form
+            get_all: /modern-standard-arabic/basic/resources/lexicon/arabic-particles/simple-particles
+            by_word: /modern-standard-arabic/basic/resources/lexicon/arabic-particles/simple-particles/by-word
+            by_unvowled_form: /modern-standard-arabic/basic/resources/lexicon/arabic-particles/simple-particles/by-unvowled-form
           special_verbs:
-            get_all: /modern-standard-arabic/basic/resources/lexicon/particles/special-verbs
-            by_unvowled_form: /modern-standard-arabic/basic/resources/lexicon/particles/special-verbs/by-unvowled-form
+            get_all: /modern-standard-arabic/basic/resources/lexicon/arabic-particles/special-verbs
+            by_unvowled_form: /modern-standard-arabic/basic/resources/lexicon/arabic-particles/special-verbs/by-unvowled-form
         calem: /modern-standard-arabic/basic/resources/lexicon/calem
         dictionnary:
           alwasit:
-            get_all: /modern-standard-arabic/basic/resources/dictionnary/alwassit
-            by_text: /modern-standard-arabic/basic/resources/dictionnary/alwassit/by-text
+            get_all: /modern-standard-arabic/basic/resources/lexicon/dictionnary/alwassit
+            by_text: /modern-standard-arabic/basic/resources/lexicon/dictionnary/alwassit/by-text
           moassir:
-            get_all: /modern-standard-arabic/basic/resources/dictionnary/moassir
-            by_text: /modern-standard-arabic/basic/resources/dictionnary/moassir/by-text
+            get_all: /modern-standard-arabic/basic/resources/lexicon/dictionnary/moassir
+            by_text: /modern-standard-arabic/basic/resources/lexicon/dictionnary/moassir/by-text
       corpora:
   machine_learning:
     levenshtein: /modern-standard-arabic/machine-learning/levenshtein
@@ -107,17 +107,17 @@ safar:
     resources:
       lexicon:
         maded:
-          get_all: /morrocan-arabic/lexicon/maded
-          by_pos: /morrocan-arabic/lexicon/maded/by-pos
-          by_root: /morrocan-arabic/lexicon/maded/by-root
-          by_lemme: /morrocan-arabic/lexicon/maded/all/by-lemma
+          get_all: /morrocan-arabic/resources/lexicon/maded
+          by_pos: /morrocan-arabic/resources/lexicon/maded/by-pos
+          by_root: /morrocan-arabic/resources/lexicon/maded/by-root
+          by_lemme: /morrocan-arabic/resources/lexicon/maded/all/by-lemma
         moralex:
-          get_all: /morrocan-arabic/lexicon/moralex
-          by_morpheme: /morrocan-arabic/lexicon/moralex/by-morpheme
-          by_pos: /morrocan-arabic/lexicon/moralex/by-pos
+          get_all: /morrocan-arabic/resources/lexicon/moralex
+          by_morpheme: /morrocan-arabic/resources/lexicon/moralex/by-morpheme
+          by_pos: /morrocan-arabic/resources/lexicon/moralex/by-pos
       corpora:
         lid_corpus:
-          get_all: /morrocan-arabic/corpora/lid-corpus
-          by_text: /morrocan-arabic/corpora/lid-corpus/by-text
-          by_lang: /morrocan-arabic/corpora/lid-corpus/by-lang
+          get_all: /morrocan-arabic/resources/corpora/lid-corpus
+          by_text: /morrocan-arabic/resources/corpora/lid-corpus/by-text
+          by_lang: /morrocan-arabic/resources/corpora/lid-corpus/by-lang
   classical_arabic:
