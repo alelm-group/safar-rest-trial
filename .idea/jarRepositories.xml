@@ -9,6 +9,11 @@
     <remote-repository>
       <option name="id" value="safar-repo-id" />
       <option name="name" value="safar-repo" />
+      <option name="url" value="http://arabic.emi.ac.ma/trial" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="safar-repo-id" />
+      <option name="name" value="safar-repo" />
       <option name="url" value="http://arabic.emi.ac.ma/maven" />
     </remote-repository>
     <remote-repository>
