@@ -1,6 +1,7 @@
 package rest_api.safar.modern_standard_arabic.resources.lexicon.arabic_particles;
 
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,12 +16,12 @@ import java.util.Map;
 @CrossOrigin
 public class ArabicParticlesRestController {
 
-    public final INativeParticleService nativeParticleService;
+    public  INativeParticleService nativeParticleService;
 
-    public ArabicParticlesRestController() {
-
-        nativeParticleService = NativeParticleFactory.getParticleImplementation();
-
+    @Bean
+    public INativeParticleService getNativeParticleService() {
+        this.nativeParticleService = NativeParticleFactory.getParticleImplementation();
+        return this.nativeParticleService;
     }
 
     @PostMapping("${safar.modern_standard_arabic.resources.lexicon.arabic_particles.simple_particles.get_all}")
